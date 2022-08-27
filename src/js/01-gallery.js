@@ -11,7 +11,7 @@ const galleryPhotoContainer = document.querySelector('.gallery');
 
 createGallery(galleryItems, galleryPhotoContainer);
 
-let lightbox = new SimpleLightbox('.gallery a',
+const lightbox = new SimpleLightbox('.gallery a',
 {
   captions: true,
   captionType: 'attr',
@@ -55,6 +55,4 @@ function zoomPicture(event) {
     return;
   }
   event.preventDefault();
-  lightbox.on('show.simplelightbox');
-
 }
