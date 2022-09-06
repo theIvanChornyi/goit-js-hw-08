@@ -21,13 +21,14 @@ function submit(event) {
 }
 
 function getData() {
-  try {
-      feedback.email.value = JSON.parse(localStorage.getItem("feedback-form-state")).email;
-      feedback.message.value = JSON.parse(localStorage.getItem("feedback-form-state")).message;
+    const data = JSON.parse(localStorage.getItem("feedback-form-state"));
+    try {
+        for (let key in data) {
+            feedback[key].value = data[key];
+        }
   } catch (error) {
       console.log('error', error);
       } 
-    
 }
 
 
